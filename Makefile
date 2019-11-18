@@ -4,7 +4,7 @@ default: build test
 setup:
 	GOOS=js
 	GOARCH=wasm
-	go get -u github.com/shurcooL/goexec
+	go get golang.org/dl/go1.11beta3
 
 run:
 	#
@@ -15,7 +15,7 @@ build:
 
 test:
 	./bin/main.wasm
-	go1.11beta3 run -port=8080 server.go
+	go1.11beta3 run bin/server.go
 
 onetime:
 	# -s == silent mode
